@@ -1,0 +1,18 @@
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          franceconnect:
+            redirect-uri: "{baseUrl}/login-callback"
+            authorization-grant-type: authorization_code
+            scope: openid,given_name,family_name,gender,birthdate
+            client-id: 211286433e39cce01db448d80181bdfd005554b19cd51b3fe7943f6b3b86ab6e
+            client-secret: 2791a731e6a59f56b6b4dd0d08c9b1f593b5f3658b9fd731cb24248e2669af4b
+        provider:
+          franceconnect:
+            authorization-uri: https://fcp.integ01.dev-franceconnect.fr/api/v1/authorize
+            token-uri: https://fcp.integ01.dev-franceconnect.fr/api/v1/token
+            user-info-uri: https://fcp.integ01.dev-franceconnect.fr/api/v1/userinfo
